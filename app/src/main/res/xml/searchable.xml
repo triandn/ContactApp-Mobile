@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<saveable xmlns:android="http://schemas.android.com/apk/res/android"
+    android:label="contact-app"
+    android:hint="save_hint" />
