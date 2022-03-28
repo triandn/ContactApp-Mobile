@@ -14,11 +14,18 @@ public class Contact {
     private String phone;
     @ColumnInfo
     private String email;
+    @ColumnInfo
+    private byte[] image;
 
-    public Contact(String name, String phone, String email) {
+    public Contact(String name, String phone, String email , byte[] image) {
         this.name = name;
         this.phone = phone;
         this.email = email;
+        this.image = image;
+    }
+    public  Contact()
+    {
+
     }
 
     public int getId() {
@@ -51,5 +58,12 @@ public class Contact {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }

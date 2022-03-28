@@ -22,6 +22,12 @@ public class ContactViewModel extends AndroidViewModel {
     public void insert(Contact contact){
         contactAsync.insert(contact);
     }
+    public void update(Contact contact){
+        contactAsync.update(contact);
+    }
+    public void delete(Contact contact){
+        contactAsync.delete(contact);
+    }
 
     public LiveData<List<Contact>> getContacts(){
         return contacts;

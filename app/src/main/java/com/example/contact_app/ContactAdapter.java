@@ -1,13 +1,17 @@
 package com.example.contact_app;
 
+import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -17,12 +21,27 @@ import java.util.List;
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactHolder> implements Filterable {
     private List<Contact> contactsAll;
     private List<Contact> contacts;
+    private static ItemClickListener clickListener;
+
 
     public ContactAdapter(List<Contact> contacts) {
+        super();
         this.contacts = contacts;
         this.contactsAll = new ArrayList<>(contacts);
-
     }
+    private static final DiffUtil.ItemCallback<Contact> DIFF_CALLBACK = new DiffUtil.ItemCallback<Contact>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull Contact oldItem, @NonNull Contact newItem) {
+            return oldItem.getId() == newItem.getId();
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull Contact oldItem, @NonNull Contact newItem) {
+            return oldItem.getName().equals(newItem.getName()) &&
+                    oldItem.getPhone().equals(newItem.getPhone()) &&
+                    oldItem.getEmail().equals(newItem.getEmail());
+        }
+    };
 
     @NonNull
     @Override
@@ -34,6 +53,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactH
     @Override
     public void onBindViewHolder(@NonNull ContactHolder holder, int position) {
         holder.textView.setText(contacts.get(position).getName());
+        byte[] byteImage = contacts.get(position).getImage();
+        holder.ivAvatar.setImageBitmap(BitmapFactory.decodeByteArray(byteImage, 0, byteImage.length));
     }
 
     @Override
@@ -41,7 +62,9 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactH
         return contacts.size();
     }
 
-
+    public void setClickListener(ItemClickListener itemClickListener) {
+        this.clickListener = itemClickListener;
+    }
 
     @Override
     public Filter getFilter() {
@@ -78,12 +101,20 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactH
     }
 
 
-    static class ContactHolder extends RecyclerView.ViewHolder{
+    static class ContactHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView textView;
+        public ImageView ivAvatar;
 
         public ContactHolder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.tv_name);
+            ivAvatar = itemView.findViewById(R.id.iv_avatar);
+            itemView.setTag(itemView);
+            itemView.setOnClickListener(this);
+        }
+        @Override
+        public void onClick(View view) {
+            if (clickListener != null) clickListener.onClick(view, getAdapterPosition());
         }
     }
 }

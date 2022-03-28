@@ -4,15 +4,21 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/layout/activity_contact_detail.xml" value="0.275" />
+        <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/layout/activity_contact_edit.xml" value="0.275" />
+        <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/layout/activity_contact_edit2.xml" value="0.275" />
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/layout/activity_contact_new.xml" value="0.27076923076923076" />
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/layout/activity_create_new_contact.xml" value="0.275" />
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/layout/activity_main.xml" value="0.275" />
+        <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/layout/activity_main2.xml" value="0.275" />
+        <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/layout/activity_main3.xml" value="0.275" />
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/layout/contact_detail.xml" value="0.275" />
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/layout/contact_item.xml" value="0.275" />
+        <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/menu/edit_menu.xml" value="0.275" />
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/menu/menu.xml" value="0.275" />
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/menu/new_contact.xml" value="0.275" />
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/menu/option_menu.xml" value="0.275" />
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/menu/option_save.xml" value="0.275" />
+        <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/menu/save_menu.xml" value="0.275" />
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/menu/search_menu.xml" value="0.275" />
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1765" />
         <entry key="..\:/Document6/Mobile/contact app/app/src/main/res/xml/saveable.xml" value="0.275" />
